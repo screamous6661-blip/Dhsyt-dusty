@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Digital</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display&family=Burgues+Script&family=Scheherazade+New:wght@700&display=swap" rel="stylesheet">
+
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+body.lock {
+  overflow: hidden;          /* halaman 1 terkunci */
+}body.unlocked {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* MATIKAN SNAP TOTAL */
+.page {
+  scroll-snap-align: none !important;
+}
+
+
+.page {
+  width: 100%;
+  min-height: 100vh;         /* full layar */
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;         /* pastikan halaman ikut aliran dokumen */
+}
+
+/* ================= PAGE 1 ================= */
+#page1{
+  background:url('back1.jpeg') center/cover no-repeat;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+  z-index:999;
+}
+
+#happyWedding{
+  position:absolute;
+  top:10%;
+  left:70%;
+  transform:translateX(0%);
+  font-family:'Burgues Script',cursive;
+  font-size:8vw;
+  color:#fff;
+}
+/* HAPPY WEDDING HORIZONTAL */
+#happyWedding {
+  writing-mode: horizontal-tb !important; /* pastikan horizontal */
+  transform: translateX(-50%) !important; /* hapus rotate / efek lain */
+  white-space: nowrap;                    /* supaya tidak turun ke bawah */
+  text-align: center;
+  letter-spacing: 2px;                    /* opsional biar elegan */
+  font-family: 'Burgues Script', cursive !important;
+}
+
+#namaMempelai{
+  position:absolute;
+  font-family: 'Alex Brush', cursive !important;
+  top:50%;
+  left:68%;
+  transform:translate(-50%,-50%);
+  font-size:20vw;
+  color:#fff;
+  text-align:center;
+}
+
+#openBtn{
+  position:absolute;
+  bottom:100px;
+  left:50%;
+  transform:translateX(0%);
+  padding:14px 26px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(135deg,#85C1E9,#5499C7);
+  color:#fff;
+  font-family:'Playfair Display',serif;
+  cursor:pointer;
+}
+.guest-name{
+  position:absolute;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-12%);
+  text-align:center;
+  color:#fff;
+}
+.
+
+/* Kepada Yth */
+.guest-name .label{
+  font-family: Arial, sans-serif;
+  font-size:10px;
+  letter-spacing:2px;
+  transform:translateX(20%);
+  text-align:center;
+}
+
+/* Nama Tamu */
+.guest-name .name{
+  font-family:'Alex Brush', cursive;
+  font-size:22px;
+  margin-top:6px;
+  display:block;
+  transform:translateX(20%);
+  text-align:center;
+}
+
+/* ================= PAGE 2 ================= */
+#page2{
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+}
+
+.photo-section{
+  height:50vh;
+  position:relative;
+}
+
+.photo{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.degraded-overlay{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:50%;
+  background:linear-gradient(to bottom,transparent,#fff);
+}
+
+.namaMempelai2{
+  position:absolute;
+  bottom:10px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:5vw;
+  color:#5499C7;
+  font-family: 'Playfair Display', cursive !important;
+}
+/* TEXT HALAMAN 2 DI ATAS COUNTDOWN */
+.page2-title {
+  font-family: 'Alex Brush', cursive !important;
+  font-size: clamp(52px, 7vw, 52px);
+  margin-bottom: 30px;   /* jarak ke countdown */
+  text-align: center;
+  background: linear-gradient(90deg, #4B6CB7, #8E44AD);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.white-section{
+  height:40vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+/* COUNTDOWN */
+#countdownContainer{
+  display:flex;
+  gap:16px;
+}
+
+.countdown-box{
+  width:60px;
+  height:60px;
+  background:linear-gradient(135deg,#85C1E9,#5499C7);
+  border-radius:14px;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  font-family:'Playfair Display',serif;
+  animation:blink 1.6s infinite;
+}
+
+@keyframes blink{
+  0%,100%{opacity:1}
+  50%{opacity:.85}
+}
+
+/* ================= PAGE 3 ================= */
+#page3 {
+  background: url('back3.jpeg') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* tengah horizontal */
+  align-items: flex-start; /* mulai dari atas */
+  text-align: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.page3-content {
+  position: relative;
+  max-width: 680px;   /* batas lebar konten */
+  width: 90%;         /* responsive */
+  display: flex;
+  flex-direction: column; /* susunan vertikal */
+  align-items: center;    /* tengah horizontal */
+  text-align: center;
+  gap: 20px;              /* jarak antar elemen */
+}
+
+/* TEKS ARAB HORIZONTAL */
+.arabic {
+  font-family: 'Scheherazade New', serif;
+  font-size: clamp(20px, 5vw, 46px);
+  writing-mode: horizontal-tb; /* pastikan horizontal */
+  direction: rtl;              /* tetap arah kanan-ke-kiri */
+  text-align: center;          /* ganti dari right ke center */
+  width: 100%;                 /* full lebar kontainer */
+background: linear-gradient(90deg, #4B6CB7, #8E44AD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* TEKS UNDANGAN */
+.invitation-text {
+  font-family: 'Burgues Script', cursive;
+  font-size: clamp(18px, 4.6vw, 28px);
+  line-height: 1.6;
+  margin-bottom: 10px;
+  width: 100%;
+  color: #4B6CB7; 
+}
+
+/* FRAME FOTO */
+.photo-frame {
+  width: 230px;
+  height: 300px;
+  border-radius: 30% / 20%;
+  overflow: hidden;
+  border: 3px solid rgba(255,255,255,0.6);
+  background-color: rgba(255,255,255,0.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  margin: 0 auto;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SLIDE UP */
+.slide-up {
+  opacity: 0;
+  transform: translateY(30px); /* start di bawah */
+  transition: all 0.8s ease-out;
+}
+
+.slide-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+#page4 {
+  background: url('back4.jpeg') center/cover no-repeat; /* ganti nanti */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.page4-content {
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+/* TEKS ARAB HORIZONTAL GRADIENT BIRU-UNGU */
+.arabic-doa {
+  font-family: 'Scheherazade New', serif;
+  font-size: clamp(20px, 6vw, 48px);
+  writing-mode: horizontal-tb;
+  direction: rtl;
+  text-align: center;
+  width: 100%;
+  background: linear-gradient(90deg, #4B6CB7, #8E44AD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-top: 50px; /* tambahan jarak dari atas container */
+}
+
+.invitation-text {
+  font-family: 'Burgues Script', cursive;
+  font-size: clamp(16px, 4.6vw, 28px);
+  line-height: 1.6;
+  width: 100%;
+  color: #4B6CB7;
+
+  margin-top: 0px; /* jarak dari teks Arab */
+}
+
+/* KONTAINER FOTO MEMPELAI */
+.photo-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* jarak antar foto (satu foto, jadi cuma padding) */
+  width: 100%;
+  margin-top: -30px;    
+}
+
+/* FOTO OVAL */
+.photo-frame-oval {
+  width: 150px;
+  height: 200px;
+  border-radius: 50%; /* oval/bulat */
+  overflow: hidden;
+  border: 3px solid rgba(255,255,255,0.6);
+  background-color: rgba(255,255,255,0.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+.photo-frame-oval img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SLIDE UP */
+.slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.slide-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* NAMA MEMPELAI */
+.nama-mempelai {
+  font-family: 'Alex Brush', cursive;
+  font-size: clamp(29px, 5vw, 36px);
+  color: #357ABD;
+  text-align: center;
+  margin-top: -30px; /* jarak dari foto */
+}
+.instagram-link {
+  font-family: 'Burgues Script', cursive;
+  font-size: clamp(20px, 4vw, 24px); /* ukuran teks */
+  color: #4B6CB7; /* warna teks, bisa diubah */
+  text-decoration: none; /* hilangkan garis bawah */
+  text-align: center;
+  margin-top: -30px; /* jarak dari keterangan orang tua */
+  cursor: pointer;
+}
+
+.instagram-link:hover {
+  color: #8E44AD; /* efek hover warna ungu jika diinginkan */
+}
+
+/* KETERANGAN ORANG TUA */
+.orang-tua {
+  font-family: 'Burgues Script', cursive;
+  font-size: clamp(16px, 4vw, 24px);
+  color: #4B6CB7;
+  text-align: center;
+  margin-top: -30px; /* jarak dari nama mempelai */
+}
+/* PAGE 5 POSITIONING */
+#page5 {
+  background: url('back4.jpeg') center/cover no-repeat; /* ganti sesuai foto background */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  text-align: center;
+  padding: 60px 20px;      /* jarak dari atas/bawah & kiri/kanan */
+  box-sizing: border-box;
+  position: relative;
+}
+
+#page5 .page4-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* tengah horizontal */
+  gap: 40px;             /* jarak antar elemen */
+  max-width: 600px;      /* batas lebar */
+  width: 90%;            /* responsive */
+}
+#photoContainer5 {
+  margin-top: -100px;   /* naik/turun foto */
+  margin-bottom: 20px; /* jarak bawah ke nama mempelai */
+}
+
+#namaMempelai5 {
+  margin-top: -50px;     /* jarak atas dari foto */
+  margin-bottom: 10px; /* jarak bawah ke orang tua */
+}
+
+#orangTua5 {
+  margin-top: -50px;     /* jarak atas dari nama mempelai */
+}
+/* Atur posisi Instagram di halaman 5 */
+#page5 .instagram-link {
+  margin-top: -50px;   /* jarak dari nama mempelai */
+  margin-bottom: 15px; /* jarak ke keterangan orang tua */
+  font-size: clamp(20px, 4vw, 24px); /* ukuran font tetap responsif */
+  color: #4B6CB7; /* warna sama halaman 4 */
+  text-decoration: none;
+}
+
+#page5 .instagram-link:hover {
+  color: #8E44AD; /* efek hover */
+}
+#invitationText5 {
+  margin-top: px;     /* jarak dari orang tua */
+  margin-bottom: -80px;  /* jika mau bisa ditambah untuk jarak bawah */
+  line-height: 1.6;    /* agar teks tidak terlalu rapat */
+}
+#page6 {
+  background: url('back6.jpeg') center/cover no-repeat; /* ganti 'back6.jpg' dengan nama file foto kamu */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* tengah horizontal */
+  align-items: center;     /* tengah vertikal */
+  text-align: center;
+  padding: 60px 20px;      /* jarak dari tepi layar */
+  box-sizing: border-box;
+  position: relative;
+}
+/* Halaman 6 - Doa Ar-Rum */
+#doaArRum {
+  font-size: clamp(18px, 6vw, 50px); /* naikkan ukuran font Arab */
+  line-height: 1.8; /* jarak antar baris */
+  text-align: center;
+  width: 100%;
+  background: linear-gradient(90deg, #4B6CB7, #8E44AD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Kontainer doa & terjemahan */
+#page6 .page4-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* tetap tengah horizontal */
+  gap: 20px;             /* jarak antar elemen doa dan terjemahan */
+  max-width: 600px;
+  width: 90%;
+  margin-top: -80px;      /* jarak dari atas halaman */
+}/* PAGE 7 - SAVE THE DATE */#page7 {
+  background: #ffffff; /* ganti dari foto ke putih */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: flex-start;  /* mulai dari atas */
+  text-align: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#page7 .page4-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* tengah horizontal */
+  gap: 20px;             /* jarak antar elemen judul, teks, dan kolom */
+  max-width: 600px;
+  width: 100%;
+  margin-top: -180px;      /* jarak dari atas halaman */
+}
+
+/* Judul Save the Date */
+#saveTheDateTitle {
+  font-family: 'Scheherazade New', serif;
+  font-size: clamp(38px, 6vw, 60px);
+  background: linear-gradient(90deg, #4B6CB7, #8E44AD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+/* Teks pengantar */
+#saveTheDateText {
+  font-family: 'Burgues Script', cursive;
+  font-size: clamp(18px, 4vw, 28px);
+  color: #4B6CB7;
+  line-height: 1.6;
+  text-align: center;
+}
+/* Kolom Acara */
+#eventContainer {
+  display: flex;
+  gap: 30px; /* jarak antar kolom Akad & Resepsi */
+  justify-content: center;
+  flex-wrap: wrap; /* responsive untuk layar kecil */
+  margin-top: 20px; /* bisa diganti kalau mau lebih jauh */
+}
+/* Kolom Akad & Resepsi */
+#eventContainer {
+  display: flex;
+  gap: 20px; /* jarak antar kolom */
+  justify-content: center;
+  flex-wrap: wrap; /* responsive untuk layar kecil */
+}
+/* Kolom Acara */
+.event-box {
+  width: 300px;
+  min-height: 100px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+  border: 3px solid rgba(255,255,255,0.6);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* jarak teks dari tepi kotak */
+  color: #4B6CB7;
+  font-family: 'Burgues Script', cursive;
+  text-align: center;
+  gap: 0px; /* jarak antar judul dan waktu */
+}
+
+.event-box strong {
+  display: block;
+  font-size: clamp(18px, 4vw, 24px);
+  margin-bottom: 30px; /* jarak ke teks waktu, bisa diubah */
+}
+/* KOTAK LOKASI TANPA GAMBAR */
+#locationBox {
+  width: 90%;
+  max-width: 600px;
+  background: rgba(255,255,255,0.05);
+  border: 3px solid rgba(255,255,255,0.6);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+  border-radius: 16px;
+  padding: 20px;
+  margin-top: 40px; /* jarak dari kolom Akad/Resepsi */
+  text-align: center;
+  color: #4B6CB7;
+  font-family: 'Burgues Script', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Judul Lokasi */
+#locationBox h3 {
+  font-size: clamp(20px, 4vw, 28px);
+  margin: 0;
+}
+
+/* Alamat */
+#locationBox p {
+  font-size: clamp(16px, 3.8vw, 22px);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Link Google Maps */
+#locationBox a.maps-link {
+  font-size: clamp(16px, 4vw, 22px);
+  color: #4B6CB7;
+  text-decoration: underline;
+  cursor: pointer;
+}
+#locationBox a.maps-link:hover {
+  color: #8E44AD;
+  }
+/*Halaman 8 */
+#page8 {
+  background: url('back6.jpeg') center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  }
+
+.page8-content {
+  width: 100%;
+  max-width: 700px;        /* batas lebar agar rapi */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  justify-content: flex-start; /* menempel ke atas */
+  margin-top: 20px;            /* jarak dari atas halaman */
+  box-sizing: border-box;
+}
+
+
+.gallery-title {
+  font-family: 'Alex Brush', cursive;
+  font-size: clamp(28px, 6vw, 48px);
+  color: #4B6CB7;
+  text-align: center;
+}
+
+/* Carousel */
+.gallery-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  max-width: 100%;
+  padding-bottom: 10px;
+}
+
+.gallery-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Item Foto */
+.gallery-item {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  width: 250px;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid rgba(255,255,255,0.6);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Wedding Gift Container */
+.wedding-gift {
+  width: 90%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+
+/* Judul Gift */
+.gift-title {
+  font-family: 'Alex Brush', cursive;
+  font-size: clamp(30px, 6vw, 48px);
+  color: #4B6CB7;
+  text-align: center;
+}
+
+/* Teks Gift */
+.gift-text {
+  font-family: 'Burgues Script', serif;
+  font-size: clamp(30px, 4vw, 22px);
+  color: #357ABD;
+  text-align: center;
+  line-height: 1.6;
+  margin-top: -20px;
+}
+
+/* Kotak Gift */
+.gift-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Kartu ATM */
+.atm-card.atm-style {
+  background: linear-gradient(135deg, #dfe4ee, #357ABD); /* abu-abu metalik */
+  border-radius: 15px;
+  width: 260px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.atm-card.atm-style:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+}
+
+/* Logo Bank di kiri atas */
+.atm-logo-container {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+
+.atm-logo {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Nomor Rekening di tengah */
+.atm-number {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 4vw, 22px);
+  font-weight: bold;
+  color: #1a1a1a;
+  text-align: center;
+  margin-top: 30px;
+  letter-spacing: 2px; /* mirip nomor kartu ATM */
+}
+
+/* Nama Pemilik di bawah */
+.atm-name {
+  font-family: 'Burgues Script', cursive;
+  font-size: clamp(14px, 3.5vw, 18px);
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 10px;
+}
+/* Halaman 9 */
+/* Halaman 9 */
+#page9 {
+  background: #f9f9f9; /* putih lembut */
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* horizontal center */
+  justify-content: flex-start; /* menempel ke atas */
+  padding: 40px 20px;        /* jarak dari tepi layar */
+  box-sizing: border-box;
+}
+
+/* Kotak utama RSVP */.rsvp-box {
+  width: 100%;
+  max-width: 400px;          
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 30px 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  margin-top: -300px; /* naikkan kotak ke atas */
+}
+
+
+/* Judul kotak */
+.rsvp-box h2 {
+  font-family: 'Alex Brush', cursive;
+  font-size: clamp(28px, 6vw, 38px);
+  text-align: center;
+  color: #4B6CB7;
+  margin-bottom: 10px;
+}
+
+/* Label */
+.rsvp-box label {
+  font-family: 'Burgues Script', cursive;
+  font-size: clamp(14px, 3.5vw, 18px);
+  color: #357ABD;
+}
+
+/* Input, textarea, select */
+.rsvp-box input,
+.rsvp-box textarea,
+.rsvp-box select {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 16px;
+  border: 2px solid #4B6CB7;
+  font-family: 'Burgues Script', cursive;
+  font-size: clamp(14px, 3.5vw, 16px);
+  color: #1a1a1a;
+  background: #fefefe;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.rsvp-box input:focus,
+.rsvp-box textarea:focus,
+.rsvp-box select:focus {
+  border-color: #8E44AD;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  outline: none;
+}
+
+/* Tombol submit */
+.rsvp-box button {
+  padding: 14px 20px;
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(135deg, #4B6CB7, #8E44AD);
+  color: #fff;
+  font-family: 'Alex Brush', cursive;
+  font-size: clamp(16px, 4vw, 20px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rsvp-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+/* Kotak daftar tamu RSVP */
+.guest-list {
+  width: 100%;
+  max-width: 400px;
+  background: #fefefe;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  margin-top: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 300px;  /* scrollable jika banyak tamu */
+  overflow-y: auto;
+}
+
+.guest-list h3 {
+  font-family: 'Alex Brush', cursive;
+  font-size: clamp(20px, 5vw, 28px);
+  color: #4B6CB7;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.guest-item {
+  font-family: 'Burgues Script', cursive;
+  font-size: clamp(14px, 3.8vw, 18px);
+  color: #357ABD;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: linear-gradient(120deg, #e0f0ff, #dfe4ee);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+/* Halaman 10 - Wedding Gift / Card ATM */
+#page10 {
+  background: #f9f9f9;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;          /* horizontal center */
+  justify-content: flex-start;  /* menempel ke atas */
+  padding: 20px 20px 40px 20px; /* jarak atas lebih kecil */
+  box-sizing: border-box;
+}
+
+/* Judul Wedding Gift */
+#page10 .gift-title {
+  font-family: 'Alex Brush', cursive;
+  font-size: clamp(28px, 6vw, 48px);
+  color: #4B6CB7;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: -200px; /* naikkan lebih dekat ke atas */
+}
+
+/* Deskripsi Gift */
+#page10 .gift-text {
+  font-family: 'Burgues Script', cursive;
+  font-size: clamp(16px, 4vw, 22px);
+  color: #357ABD;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Kotak Gift (Card ATM) */
+#page10 .gift-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 0;
+transform: translateY(0px);
+}
+img {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.page {
+  will-change: transform;
+}
+</style>
+</head>
+
+<body class="lock">
+<audio id="bgMusic" loop>
+  <source src="musik.mp3" type="audio/mpeg">
+</audio>
+<!-- PAGE 1 -->
+<section id="page1" class="page">
+  <div id="happyWedding">Happy Wedding</div>
+  <div id="namaMempelai">Wengo<br>& Fitri</div>
+  <button id="openBtn">Buka Undangan</button>
+<div class="guest-name">
+  <div class="label">Kepada Yth.</div>
+<span id="guestDisplay" class="name">Tamu Undangan</span>
+</div>
+</section>
+
+<!-- PAGE 2 -->
+<section id="page2" class="page">
+  <div class="photo-section">
+    <img src="back2.jpg" class="photo">
+    <div class="degraded-overlay"></div>
+    <div class="namaMempelai2">Wedding Of</div>
+  </div>
+
+  <div class="white-section">
+    <div class="page2-title">
+  Wengo & Fitri
+</div>
+    <div id="countdownContainer">
+      <div class="countdown-box"><div id="days">00</div><small>Hari</small></div>
+      <div class="countdown-box"><div id="hours">00</div><small>Jam</small></div>
+      <div class="countdown-box"><div id="minutes">00</div><small>Menit</small></div>
+      <div class="countdown-box"><div id="seconds">00</div><small>Detik</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 3 --><!-- PAGE 3 -->
+<section id="page3" class="page">
+  <div class="page3-content slide-up" id="page3Text">
+    <!-- Teks Arab -->
+    <div class="arabic">
+      اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللّٰهِ وَبَرَكَاتُهُ
+    </div>
+
+    <!-- Teks Undangan -->
+    <div class="invitation-text">
+      Atas Rahmat Tuhan Yang Maha Esa, kami bermaksud mengundang Anda di acara Kami.
+      Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga,
+      apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
+    </div>
+
+    <!-- Foto / Frame -->
+    <div class="photo-frame" id="frame1">
+      <img src="bg1.jpeg" alt="Foto Mempelai">
+    </div>
+  </div>
+</section>
+<!-- PAGE 4 -->
+<section id="page4" class="page">
+  <div class="page4-content">
+    
+    <!-- Teks Arab Bismillah -->
+    <div class="arabic-doa slide-up" id="bismillahText">
+      بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
+    </div>
+
+    <!-- Teks Terjemahan / Undangan -->
+    <div class="invitation-text slide-up" id="invitationText">
+      Dengan Memohon Rahmat dan Ridho Dari Allah SWT, Kami Bermaksud Menyelenggarakan Pernikahan Putra Putri Kami :
+    </div>
+
+    <!-- Foto Mempelai -->
+    <div class="photo-container slide-up" id="photoContainer">
+      <!-- Foto Pria -->
+      <div class="photo-frame-oval">
+        <img src="foto-pria.jpg" alt="Mempelai Pria">
+      </div>
+    </div>
+<!-- Nama Mempelai Pria -->
+<div class="nama-mempelai slide-up" id="namaMempelaiPria">
+  Wengo
+</div>
+<!-- Username Instagram -->
+<a href="https://www.instagram.com/username_anda/" target="_blank" class="instagram-link slide-up">
+  @username_anda
+</a>
+<!-- Keterangan Orang Tua -->
+<div class="orang-tua slide-up" id="orangTuaPria">
+  Putra dari Bapak Wenggo & Ibu Maryah
+</div>
+  </div>
+  
+</section>
+<!-- PAGE 5 -->
+<section id="page5" class="page">
+  <div class="page4-content">
+    
+    <!-- Foto Mempelai Wanita -->
+    <div class="photo-container slide-up" id="photoContainer5">
+      <div class="photo-frame-oval">
+        <img src="foto-wanita.jpg" alt="Mempelai Wanita">
+      </div>
+    </div>
+
+    <!-- Nama Mempelai Wanita -->
+    <div class="nama-mempelai slide-up" id="namaMempelai5">
+      Fitri
+    </div>
+
+   <!-- Username Instagram (opsional, bisa dihapus) -->
+    <a href="https://www.instagram.com/username_anda/" target="_blank" class="instagram-link slide-up">
+      @username_anda
+    </a>
+    <!-- Keterangan Orang Tua -->
+    <div class="orang-tua slide-up" id="orangTua5">
+      Putri dari Bapak Fitri & Ibu Siti
+    </div>
+
+<!-- Teks Undangan Halaman 5 -->
+<div class="invitation-text slide-up" id="invitationText5">
+  Merupakan suatu kehormatan dan kebahagiaan<br>
+  bagi kami apabila Bapak/Ibu/Saudara/i<br>
+  berkenan hadir dan memberikan<br>
+  doa restu
+</div>
+  </div>
+</section>
+<!-- PAGE 6 -->
+<section id="page6" class="page">
+  <div class="page4-content">
+    
+    <!-- Doa Surat Ar-Rum ayat 21 (Arab) -->
+    <div class="arabic-doa slide-up" id="doaArRum">
+      وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَلِكَ لَآيَاتٍ لِقَوْمٍ يَتَفَكَّرُونَ
+    </div>
+
+    <!-- Terjemahan -->
+    <div class="invitation-text slide-up" id="terjemahArRum">
+      Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri,  
+      supaya kamu merasa tenteram dan kasih sayang di antara kalian.  
+      Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi orang-orang yang berpikir.
+      <br> (Ar-Ruum,21) 
+    </div>
+
+  </div>
+</section><!-- PAGE 7 -->
+<section id="page7" class="page">
+  <div class="page4-content">
+
+    <!-- Judul Save the Date -->
+    <div class="arabic-doa slide-up" id="saveTheDateTitle">
+      Save the Date
+    </div>
+
+    <!-- Teks pengantar -->
+    <div class="invitation-text slide-up" id="saveTheDateText">
+      Insa Allah Acara akan dilaksanakan pada:
+    </div>
+
+    <!-- Kolom Acara -->
+    <div class="photo-container slide-up" id="eventContainer">
+      
+      <!-- Akad Nikah -->
+      <div class="event-box">
+        <strong>Akad Nikah</strong> Senin,09 September 2026
+       <br> 10:00 WIB
+      </div>
+
+      <!-- Resepsi -->
+      <div class="event-box">
+        <strong>Resepsi</strong>Senin,09 Spetember 2026
+       <br> 11:00 WIB
+      </div>
+<!-- Lokasi Acara -->
+<div class="slide-up" id="locationBox">
+  <h3>Lokasi Acara</h3>
+  <p>Jl. Contoh No.123, Kota Contoh, Provinsi</p>
+  <a href="https://www.google.com/maps/place/..." target="_blank" class="maps-link">
+    Lihat di Google Maps
+  </a>
+</div>
+    </div>
+
+  </div>
+</section><!-- PAGE 8 - WEDDING GALLERY --><!-- PAGE 8 - WEDDING GALLERY -->
+<section id="page8" class="page">
+  <div class="page8-content">
+    <!-- Judul -->
+    <div class="gallery-title">Wedding Gallery</div>
+
+    <!-- Carousel Foto -->
+    <div class="gallery-carousel" id="galleryCarousel">
+      <div class="gallery-item">
+        <img src="bg2.jpg" alt="Foto 1">
+      </div>
+      <div class="gallery-item">
+        <img src="bg3.jpg" alt="Foto 2">
+      </div>
+      <div class="gallery-item">
+        <img src="bg1.jpeg" alt="Foto 3">
+      </div>
+      <div class="gallery-item">
+        <img src="back2.jpg" alt="Foto 4">
+      </div>
+    </div>
+</section>
+<section id="page10" class="page">
+  <h2 class="gift-title">Wedding Gift</h2>
+  <p class="gift-text">
+    Doa restu Bapak/Ibu sekalian sangat berarti bagi kami.<br>
+    Jika memberi merupakan ungkapan kasih, Bapak/Ibu dapat memberi kado secara cashless.
+  </p>
+
+  <div class="gift-box">
+    <!-- Kartu ATM 1 -->
+    <div class="atm-card atm-style">
+      <div class="atm-logo-container">
+        <img src="logo-bank.png" alt="Bank Logo" class="atm-logo">
+      </div>
+      <div class="atm-number">1234 5678 9012</div>
+      <div class="atm-name">A/N Wengo & Fitri</div>
+    </div>
+
+    <!-- Kartu ATM 2 -->
+    <div class="atm-card atm-style">
+      <div class="atm-logo-container">
+        <img src="dana-bank.png" alt="Gopay Logo" class="atm-logo">
+      </div>
+      <div class="atm-number">0812 3456 7890</div>
+      <div class="atm-name">A/N Wengo & Fitri</div>
+    </div>
+  </div>
+</section>
+<section id="page9" class="page">
+  <div class="rsvp-box">
+    <h2>Konfirmasi Kehadiran</h2>
+
+    <label for="guestName">Nama Tamu</label>
+    <input type="text" id="guestName" placeholder="Masukkan Nama" required>
+
+    <label for="guestMessage">Pesan / Ucapan</label>
+    <textarea id="guestMessage" placeholder="Tulis pesan Anda" rows="4"></textarea>
+
+    <label for="attendance">Kehadiran</label>
+    <select id="attendance" required>
+      <option value="">-- Pilih Kehadiran --</option>
+      <option value="Hadir">Hadir</option>
+      <option value="Tidak Hadir">Tidak Hadir</option>
+    </select>
+
+    <button id="submitBtn">Kirim</button>
+  </div>
+
+  <!-- Daftar tamu -->
+  <div class="guest-list" id="guestList">
+    <h3>Daftar Tamu</h3>
+    <!-- item tamu akan muncul di sini -->
+  </div>
+</section>
+<script>
+/* UNLOCK SETELAH KLIK */
+openBtn.onclick = () => {
+  const music = document.getElementById('bgMusic');
+  music.volume = 0.7; // bisa 0.3 – 1.0
+  music.play();
+
+  document.body.classList.remove('lock');
+  document.body.classList.add('unlocked');
+  document.getElementById('page1').remove();
+
+  setTimeout(() => {
+    document.getElementById('page2').scrollIntoView({ behavior: 'smooth' });
+
+    setTimeout(startAutoScroll, 1200);
+  }, 300);
+};
+
+
+/* COUNTDOWN */
+const weddingDate=new Date("2026-02-14T10:00:00").getTime();
+setInterval(()=>{
+  const now=new Date().getTime();
+  const d=weddingDate-now;
+  days.innerText=Math.floor(d/86400000);
+  hours.innerText=Math.floor(d%86400000/3600000);
+  minutes.innerText=Math.floor(d%3600000/60000);
+  seconds.innerText=Math.floor(d%60000/1000);
+},1000);
+
+/* SLIDE UP SAAT PAGE 3 TERLIHAT */
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+    }
+  });
+},{threshold:0.4});
+
+observer.observe(document.getElementById('page3Text'));
+
+// Slide-up untuk teks dan foto halaman 4
+const observer4 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+    }
+  });
+}, { threshold: 0.4 });
+
+// Observing elemen
+observer4.observe(document.getElementById('bismillahText'));
+observer4.observe(document.getElementById('invitationText'));
+observer4.observe(document.getElementById('photoContainer'));
+observer4.observe(document.getElementById('namaMempelaiPria'));
+observer4.observe(document.getElementById('orangTuaPria'));
+document.querySelectorAll('.instagram-link').forEach(el=>{
+  observer4.observe(el);
+});
+// Slide-up untuk teks dan foto halaman 5
+observer4.observe(document.getElementById('photoContainer5'));
+observer4.observe(document.getElementById('namaMempelai5'));
+observer4.observe(document.getElementById('orangTua5'));
+observer4.observe(document.querySelector('#page5 .instagram-link'));
+observer4.observe(document.getElementById('invitationText5'));
+// Slide-up untuk halaman 6
+observer4.observe(document.getElementById('doaArRum'));
+observer4.observe(document.getElementById('terjemahArRum'));
+// Slide-up halaman 7
+observer4.observe(document.getElementById('saveTheDateTitle'));
+observer4.observe(document.getElementById('saveTheDateText'));
+observer4.observe(document.getElementById('eventContainer'));
+observer4.observe(document.getElementById('locationBox'));
+// Slide-up halaman 8// const galleryTitle = document.querySelector('.gallery-title');
+const observerTitle = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      galleryTitle.classList.add('active');
+    }
+  });
+},{ threshold: 1 });
+
+const galleryTitle = document.querySelector('.gallery-title');
+
+const guestName = document.getElementById('guestName');
+const guestMessage = document.getElementById('guestMessage');
+const attendance = document.getElementById('attendance');
+const submitBtn = document.getElementById('submitBtn');
+const guestList = document.getElementById('guestList');
+
+let guests = JSON.parse(localStorage.getItem('guests')) || [];
+
+// Fungsi tampilkan daftar tamu
+function renderGuests() {
+  // Hapus item lama
+  guestList.querySelectorAll('.guest-item').forEach(e => e.remove());
+
+  guests.forEach((guest, index) => {
+    const div = document.createElement('div');
+    div.className = 'guest-item';
+    div.innerHTML = `<strong>${guest.name}</strong> - ${guest.attendance}<br>${guest.message}`;
+    guestList.appendChild(div);
+  });
+}
+
+// Tampilkan daftar saat halaman load
+renderGuests();
+
+// Event submit
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if(!guestName.value || !attendance.value) return alert('Nama dan Kehadiran wajib diisi!');
+
+  // Tambahkan tamu baru
+  guests.push({
+    name: guestName.value,
+    message: guestMessage.value,
+    attendance: attendance.value
+  });
+
+  // Simpan ke localStorage
+  localStorage.setItem('guests', JSON.stringify(guests));
+
+  // Refresh daftar
+  renderGuests();
+
+  // Reset form
+  guestName.value = '';
+  guestMessage.value = '';
+  attendance.value = '';
+});
+
+</script><script>
+let running = false;
+let paused = false;
+let speed = 2.0; // 🔥 UBAH ANGKA INI (1.0 – 3.0)
+
+function autoScroll() {
+  if (!running) return;
+
+  if (!paused) {
+    window.scrollTo(0, window.scrollY + speed);
+  }
+
+  if (window.innerHeight + window.scrollY < document.body.scrollHeight - 2) {
+    requestAnimationFrame(autoScroll);
+  }
+}
+
+function startAutoScroll() {
+  if (running) return;
+  running = true;
+  requestAnimationFrame(autoScroll);
+}
+
+window.addEventListener('touchstart', () => paused = true, { passive: true });
+window.addEventListener('touchend', () => paused = false);
+</script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  let nama = params.get("nama");
+
+  if(nama){
+    nama = decodeURIComponent(nama)
+      .toLowerCase()
+      .replace(/\b\w/g, c => c.toUpperCase());
+
+    document.getElementById("guestDisplay").innerText = nama;
+
+    // isi otomatis ke RSVP juga (bonus)
+    document.getElementById("guestName").value = nama;
+  }
+</script>
+
+
+
+</body>
+</html>
